@@ -4,8 +4,8 @@ StrawPy is a python wrapper for [Strawpoll](http://www.strawpoll.me/).
 
 # Table of Contents
 
-+ [Obtaining Pyhorizon](#obtaining-strawpy)
-+ [Using Pyhorizon](#using-strawpy)
++ [Obtaining StrawPy](#obtaining-strawpy)
++ [Using StrawPy](#using-strawpy)
 	+ [Get Poll](#get-poll)
 	+ [Create Poll](#create-poll)
 	+ [StrawPoll Class](#strawpoll-class)
@@ -105,7 +105,7 @@ poll.open(results=False)
 
 # Attribution
 
-Horizion isn't endorsed by [Strawpoll](http://www.strawpoll.me/) and doesn't reflect the views or opinions of Strawpoll or anyone officially involved in producing or managing Strawpoll or the Strawpoll API. 
+StrawPy isn't endorsed by [Strawpoll](http://www.strawpoll.me/) and doesn't reflect the views or opinions of Strawpoll or anyone officially involved in producing or managing Strawpoll or the Strawpoll API. 
 
 # License
 
