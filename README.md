@@ -61,17 +61,14 @@ A strawpy.StrawPoll class is returned from a successful get_poll or create_poll 
 
 :green_book: Attributes:
 
-* app_version
-* assets_headers
-* assets_url
-* environment
-* key
-* password
-* ticket_url
-* token
-* user_url
-* username
-* quark_headers
+* id
+* title
+* votes
+* options
+* captcha
+* dupcheck
+* results
+* results_with_percent
 
 :orange_book: Methods:
 
