@@ -61,8 +61,6 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 
-tests.py
-
 .pypirc
 
 horizon.egg-info/
@@ -78,5 +76,3 @@ setup.cfg
 .README.markdown.swp
 
 .idea
-
-testing/
