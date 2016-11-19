@@ -15,7 +15,7 @@ StrawPy is a python wrapper for [Strawpoll](http://www.strawpoll.me/).
 
 # Obtaining StrawPy
 
-You can get Pyhorizon using pip install:
+You can get StrawPy using pip install:
 
 	pip install strawpy
 	
