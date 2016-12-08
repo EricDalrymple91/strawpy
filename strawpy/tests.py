@@ -19,6 +19,9 @@ def tests():
     print poll.dupcheck
     print poll.results
     print poll.results_with_percent
+    print poll.url
+    print poll.results_url
+    poll.refresh()
     poll.open(results=False)
     # Test creating a poll
     new_poll = strawpy.create_poll('[{ts}] Is Python the best?'.format(ts=time_stamp), ['Yes', 'No'])
@@ -31,6 +34,9 @@ def tests():
     print new_poll.dupcheck
     print new_poll.results
     print new_poll.results_with_percent
+    print new_poll.url
+    print new_poll.results_url
+    poll.refresh()
     new_poll.open(results=False)
     # Output time
     duration = time.time() - start

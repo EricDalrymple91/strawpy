@@ -105,6 +105,9 @@ class StrawPoll(object):
             print poll.dupcheck
             print poll.results
             print poll.results_with_percent
+            print poll.url
+            print poll.results_url
+            poll.refresh()
             poll.open(results=False)
 
         :param strawpoll_response:
@@ -118,6 +121,8 @@ class StrawPoll(object):
         self.votes = self.response_json['votes']
         self.captcha = self.response_json['captcha']
         self.dupcheck = self.response_json['dupcheck']
+        self.url = 'https://www.strawpoll.me/{id}'.format(id=self.id)
+        self.results_url = 'https://www.strawpoll.me/{id}/r'.format(id=self.id)
 
     def __str__(self):
         return 'strawpy.StrawPoll object for {title} [{id}]'.format(title=self.title, id=self.id)
@@ -147,4 +152,21 @@ class StrawPoll(object):
 
         :param results: True/False
         """
-        webbrowser.open('https://www.strawpoll.me/{id}{results}'.format(id=self.id, results='/r' if results else ''))
+        webbrowser.open(self.results_url if results else self.url)
+
+    def refresh(self):
+        """ Refresh all class attributes.
+
+        """
+        strawpoll_response = requests.get('{api_url}/{poll_id}'.format(api_url=api_url, poll_id=self.id))
+        raise_status(strawpoll_response)
+        self.status_code = strawpoll_response.status_code
+        self.response_json = strawpoll_response.json()
+        self.id = self.response_json['id']
+        self.title = self.response_json['title']
+        self.options = self.response_json['options']
+        self.votes = self.response_json['votes']
+        self.captcha = self.response_json['captcha']
+        self.dupcheck = self.response_json['dupcheck']
+        self.url = 'https://www.strawpoll.me/{id}'.format(id=self.id)
+        self.results_url = 'https://www.strawpoll.me/{id}/r'.format(id=self.id)

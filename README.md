@@ -1,4 +1,4 @@
-# StrawPy 1.0
+# StrawPy 1.1
 
 StrawPy is a python wrapper for [Strawpoll](http://www.strawpoll.me/).
 
@@ -15,7 +15,7 @@ StrawPy is a python wrapper for [Strawpoll](http://www.strawpoll.me/).
 
 # Obtaining StrawPy
 
-You can get StrawPy using pip install:
+You can get Pyhorizon using pip install:
 
 	pip install strawpy
 	
@@ -61,18 +61,22 @@ A strawpy.StrawPoll class is returned from a successful get_poll or create_poll 
 
 :green_book: Attributes:
 
-* id
-* title
-* votes
-* options
-* captcha
-* dupcheck
-* results
-* results_with_percent
+* app_version
+* assets_headers
+* assets_url
+* environment
+* key
+* password
+* ticket_url
+* token
+* user_url
+* username
+* url
 
 :orange_book: Methods:
 
 * open(results=False)
+* refresh()
 
 :page_with_curl: Example:
 
@@ -88,11 +92,22 @@ print poll.captcha
 print poll.dupcheck
 print poll.results
 print poll.results_with_percent
+print poll.url
+print poll.results_url
+poll.refresh()
 poll.open(results=False)
 
 ```
 
 # Changelog
+
+### 1.1 (2016-12-7)
+
+:wrench: Features:
+
+- Added url attribute to StrawPoll class objects.
+- Added results_url to StrawPoll class objects.
+- Added refresh method to StrawPoll class objects.
 
 ### 1.0 (2016-11-18)
 
